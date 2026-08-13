@@ -1,0 +1,1555 @@
+{
+  "name": "AI Sales Lead Qualification - Sanitized Template",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "AI Sales Lead Qualification",
+        "formDescription": "on testing ",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Full Name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Work Email",
+              "fieldType": "email",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Company Name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Job Title",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Industry",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "SaaS / Technology"
+                  },
+                  {
+                    "option": "E-commerce"
+                  },
+                  {
+                    "option": "Finance"
+                  },
+                  {
+                    "option": "Healthcare"
+                  },
+                  {
+                    "option": "Marketing / Agency"
+                  },
+                  {
+                    "option": "Education"
+                  },
+                  {
+                    "option": "Other"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Company Size",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "1–10"
+                  },
+                  {
+                    "option": "11–50"
+                  },
+                  {
+                    "option": "51–200"
+                  },
+                  {
+                    "option": "201–500"
+                  },
+                  {
+                    "option": "500+"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What problem are you trying to solve?",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What solution are you looking for?",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "AI Automation"
+                  },
+                  {
+                    "option": "Sales Automation"
+                  },
+                  {
+                    "option": "Lead Generation"
+                  },
+                  {
+                    "option": "Customer Support Automation"
+                  },
+                  {
+                    "option": "Data Automation"
+                  },
+                  {
+                    "option": "Other"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Estimated Budget",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Under $1,000"
+                  },
+                  {
+                    "option": "$1,000–$5,000"
+                  },
+                  {
+                    "option": "$5,000–$10,000"
+                  },
+                  {
+                    "option": "$10,000–$25,000"
+                  },
+                  {
+                    "option": "$25,000+"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "When are you looking to implement this?",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Immediately"
+                  },
+                  {
+                    "option": "Within 30 days"
+                  },
+                  {
+                    "option": "1–3 months"
+                  },
+                  {
+                    "option": "3–6 months"
+                  },
+                  {
+                    "option": "Just researching"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Are you involved in the purchasing decision?",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Yes, I'm the decision maker"
+                  },
+                  {
+                    "option": "I'm part of the decision-making team"
+                  },
+                  {
+                    "option": "No, I'm researching for someone else"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Anything else we should know?",
+              "fieldType": "textarea"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        -368,
+        -80
+      ],
+      "id": "744063d3-fde1-49b6-a176-49b6eec83c49",
+      "name": "On form submission"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "98197aa1-6cb9-4aea-a656-a6368de866cd",
+              "name": "Full Name",
+              "value": "={{ $json['Full Name'] }}",
+              "type": "string"
+            },
+            {
+              "id": "bfa84c9d-de10-4762-97b4-a98df71480f6",
+              "name": "Work Email",
+              "value": "={{ $json['Work Email'] }}",
+              "type": "string"
+            },
+            {
+              "id": "1e303aad-75bd-4bb7-94a8-df18420ef255",
+              "name": "Company Name",
+              "value": "={{ $json['Company Name'] }}",
+              "type": "string"
+            },
+            {
+              "id": "4a111e2b-7875-498d-acbb-c22f242f07f4",
+              "name": "Job Title",
+              "value": "={{ $json['Job Title'] }}",
+              "type": "string"
+            },
+            {
+              "id": "efdb1cc7-20fc-485d-b4e5-0779247baf11",
+              "name": "Industry",
+              "value": "={{ $json.Industry }}",
+              "type": "string"
+            },
+            {
+              "id": "f25f692f-c630-4d45-9cec-6505613e09ff",
+              "name": "Company Size",
+              "value": "={{ $json['Company Size'] }}",
+              "type": "string"
+            },
+            {
+              "id": "e2daf81c-5ed7-496c-9451-d2d0b607ef02",
+              "name": "What problem are you trying to solve?",
+              "value": "={{ $json['What problem are you trying to solve?'] }}",
+              "type": "string"
+            },
+            {
+              "id": "2b8c6c14-c33a-4745-b6e8-7dd6e5bbb01b",
+              "name": "What solution are you looking for?",
+              "value": "={{ $json['What solution are you looking for?'] }}",
+              "type": "string"
+            },
+            {
+              "id": "0cedceaf-36c7-4abe-a9e9-a1b0d4e40121",
+              "name": "Estimated Budget",
+              "value": "={{ $json['Estimated Budget'] }}",
+              "type": "string"
+            },
+            {
+              "id": "f6e42447-e549-4d4b-9321-bc6f39ab962e",
+              "name": "When are you looking to implement this?",
+              "value": "={{ $json['When are you looking to implement this?'] }}",
+              "type": "string"
+            },
+            {
+              "id": "c8aed24d-d1bc-458c-b344-f8a419818761",
+              "name": "Are you involved in the purchasing decision?",
+              "value": "={{ $json['Are you involved in the purchasing decision?'] }}",
+              "type": "string"
+            },
+            {
+              "id": "77571b99-41ff-4ae5-95c3-b08bc88d285a",
+              "name": "Anything else we should know?",
+              "value": "={{ $json['Anything else we should know?'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        -144,
+        -80
+      ],
+      "id": "6898c6ff-e424-472b-bed5-ed61a97b7708",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "44c0e703-e5f0-4006-9bd2-e23367472af7",
+              "leftValue": "={{ $json['Full Name'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "b3360c53-e8de-4ff7-b417-5bfbc08387e9",
+              "leftValue": "={{ $json['Work Email'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "4b9cb3a2-dc0e-4fd8-a114-22d15e77066a",
+              "leftValue": "={{ $json['Company Name'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "5ae3e926-e893-496f-8344-f66c9ce2c0b1",
+              "leftValue": "={{ $json['Job Title'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "75d9d982-af75-4d0a-a535-d7a94ac8c33d",
+              "leftValue": "={{ $json.Industry }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "87fdd9b7-5ebd-4156-85d7-5b752156ca39",
+              "leftValue": "={{ $json['Company Size'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "c7fda99f-1c89-4de1-a2c3-ced509624a1f",
+              "leftValue": "={{ $json['What problem are you trying to solve?'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "0721ab28-502d-418f-9423-4e51d6b30280",
+              "leftValue": "={{ $json['What solution are you looking for?'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "7280e9e3-5c76-44f0-9dd7-1dbe0950c332",
+              "leftValue": "={{ $json['Estimated Budget'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "c488c5e7-9039-4845-877d-d447aecf38cc",
+              "leftValue": "={{ $json['When are you looking to implement this?'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": "=",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        80,
+        -80
+      ],
+      "id": "f72873cd-1906-40ce-8e4e-9a623f1c3442",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Lead Information:\n\nName: {{ $('Edit Fields').item.json['Full Name'] }}\nEmail: {{ $('Edit Fields').item.json['Work Email'] }}\nCompany: {{ $('Edit Fields').item.json['Company Name'] }}\nJob Title: {{ $('Edit Fields').item.json['Job Title'] }}\nIndustry: {{ $('Edit Fields').item.json.Industry }}\nCompany Size: {{ $('Edit Fields').item.json['Company Size'] }}\n\nBusiness Problem:{{ $('Edit Fields').item.json['What problem are you trying to solve?'] }}\n\nRequested Solution:{{ $('Edit Fields').item.json['What solution are you looking for?'] }}\n\nBudget:{{ $('Edit Fields').item.json['Estimated Budget'] }}\n\nImplementation Timeline:{{ $('Edit Fields').item.json['When are you looking to implement this?'] }}\n\nDecision Maker:{{ $('Edit Fields').item.json['Are you involved in the purchasing decision?'] }}\n\nAdditional Information:{{ $('Edit Fields').item.json['Anything else we should know?'] }}\nCalculate the score using the scoring framework and return the structured qualification.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are an AI Sales Lead Qualification Specialist.\n\nYour job is to evaluate incoming sales leads and determine how valuable they are to the sales team.\n\nAnalyze the lead using the following scoring framework.\n\nSCORING:\n\n1. Budget — 0 to 25 points\n- $25,000+ = 25\n- $10,000–$25,000 = 20\n- $5,000–$10,000 = 15\n- $1,000–$5,000 = 8\n- Under $1,000 = 3\n\n2. Buying Timeline — 0 to 20 points\n- Immediately = 20\n- Within 30 days = 18\n- 1–3 months = 12\n- 3–6 months = 6\n- Just researching = 2\n\n3. Business Need — 0 to 20 points\n- Clear, urgent and valuable business problem = 18–20\n- Clear but moderate problem = 12–17\n- Minor or vague problem = 5–11\n- No meaningful problem = 0–4\n\n4. Decision-Making Authority — 0 to 15 points\n- Decision maker = 15\n- Part of decision-making team = 10\n- Researching for someone else = 5\n\n5. ICP / Company Fit — 0 to 10 points\nEvaluate the industry, company size, requested solution and overall fit with a B2B AI automation/sales automation service.\n\n6. Purchase Intent — 0 to 10 points\nAnalyze the lead's problem description and additional information.\nHigh intent means the lead shows clear interest in purchasing, comparing providers, starting a project, or solving an urgent problem.\n\nTOTAL SCORE:\nAdd all six categories together.\nThe final score MUST be between 0 and 100.\n\nCLASSIFICATION:\n80–100 = HOT\n50–79 = WARM\n0–49 = COLD\n\nIMPORTANT:\nDo not invent information.\nOnly use information provided by the lead.\nIf information is missing, score that category conservatively.\n\nReturn the final qualification using the required structured output format."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        304,
+        -80
+      ],
+      "id": "a2b7e35f-145a-4061-8c72-c305910524a4",
+      "name": "AI Agent",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        320,
+        144
+      ],
+      "id": "c13a6529-6912-495f-ac39-491ce489891f",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"lead_score\": 91,\n  \"qualification\": \"HOT\",\n  \"intent\": \"HIGH\",\n  \"icp_fit\": \"STRONG\",\n  \"reason\": \"Strong budget, urgent timeline, clear business problem, and the lead is the decision maker.\",\n  \"recommended_action\": \"Contact the lead within 24 hours and schedule a sales discovery call.\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        448,
+        144
+      ],
+      "id": "d212e79d-f760-45c4-af7b-13cbe98e6b72",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output.qualification }}",
+                    "rightValue": "HOT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "2dce0487-4947-4a4f-97d2-47a10b95f2a3"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Hot"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "7071ad45-a2f1-4832-b407-e96bdca8958e",
+                    "leftValue": "={{ $json.output.qualification }}",
+                    "rightValue": "WARM",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Warm"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "96721a77-fb8c-448d-b4ab-1b2f28927b2d",
+                    "leftValue": "={{ $json.output.qualification }}",
+                    "rightValue": "COLD",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Cold"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        656,
+        -96
+      ],
+      "id": "1770319a-689c-4449-bc87-43303cca8b0e",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "YOUR_AIRTABLE_BASE_ID",
+          "mode": "list",
+          "cachedResultName": "AI Sales CRM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "YOUR_AIRTABLE_TABLE_ID",
+          "mode": "list",
+          "cachedResultName": "Lead"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "={{ $('Edit Fields').item.json['Full Name'] }}",
+            "Email": "={{ $('Edit Fields').item.json['Work Email'] }}",
+            "Company": "={{ $('Edit Fields').item.json['Company Name'] }}",
+            "Job Title": "={{ $('Edit Fields').item.json['Job Title'] }}",
+            "Industry": "={{ $('Edit Fields').item.json.Industry }}",
+            "Company Size": "={{ $('Edit Fields').item.json['Company Size'] }}",
+            "Business Problem": "={{ $('Edit Fields').item.json['What problem are you trying to solve?'] }}",
+            "Requested Solution": "={{ $('Edit Fields').item.json['What solution are you looking for?'] }}",
+            "Budget": "={{ $('Edit Fields').item.json['Estimated Budget'] }}",
+            "Decision Maker": "={{ $('Edit Fields').item.json['Are you involved in the purchasing decision?'] }}",
+            "Timeline": "={{ $('Edit Fields').item.json['When are you looking to implement this?'] }}",
+            "Lead Score": "={{ $('AI Agent').item.json.output.lead_score }}",
+            "Qualification": "={{ $('AI Agent').item.json.output.qualification }}",
+            "Intent": "={{ $('AI Agent').item.json.output.intent }}",
+            "ICP Fit": "={{ $('AI Agent').item.json.output.icp_fit }}",
+            "AI Reason": "={{ $('AI Agent').item.json.output.reason }}",
+            "Recommended Action": "={{ $('AI Agent').item.json.output.recommended_action }}",
+            "Lead Status": "New",
+            "Created At": "={{ $now.setZone('Asia/Dhaka').toFormat('HH:mm:ss') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Job Title",
+              "displayName": "Job Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Industry",
+              "displayName": "Industry",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Company Size",
+              "displayName": "Company Size",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Business Problem",
+              "displayName": "Business Problem",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Requested Solution",
+              "displayName": "Requested Solution",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Budget",
+              "displayName": "Budget",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Timeline",
+              "displayName": "Timeline",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Decision Maker",
+              "displayName": "Decision Maker",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lead Score",
+              "displayName": "Lead Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Qualification",
+              "displayName": "Qualification",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Intent",
+              "displayName": "Intent",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ICP Fit",
+              "displayName": "ICP Fit",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "AI Reason",
+              "displayName": "AI Reason",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Recommended Action",
+              "displayName": "Recommended Action",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lead Status",
+              "displayName": "Lead Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        880,
+        -384
+      ],
+      "id": "209b8a7f-efc7-41c6-90d6-07602d8991fd",
+      "name": "Create a record"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "YOUR_SLACK_CHANNEL_ID",
+          "mode": "list",
+          "cachedResultName": "sales-leads"
+        },
+        "text": "=🔥 *NEW HOT LEAD*\n\n👤 *Name:* {{ $json.fields.Name }}\n🏢 *Company:* {{ $json.fields.Company }}\n💼 *Job Title:* {{ $json.fields['Job Title'] }}\n\n📊 *Lead Score:* {{ $json.fields['Lead Score'] }}/100\n🔥 *Qualification:* {{ $json.fields.Qualification }}\n🎯 *Intent:* {{ $json.fields.Intent }}\n🏢 *ICP Fit:* {{ $json.fields['ICP Fit'] }}\n\n💰 *Budget:* {{ $json.fields.Budget }}\n⏱️ *Timeline:* {{ $json.fields.Timeline }}\n\n🧩 *Business Problem:*\n{{ $json.fields['Business Problem'] }}\n\n🤖 *AI Recommendation:*\n{{ $json.fields['Recommended Action'] }}\n\n📝 *AI Reason:*\n{{ $json.fields['AI Reason'] }}\n\n⚡ *Action Required:* Contact this lead as soon as possible.",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.5,
+      "position": [
+        1168,
+        -384
+      ],
+      "id": "456881e5-a5f0-4809-874a-987a26fca725",
+      "name": "Send a message"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "YOUR_AIRTABLE_BASE_ID",
+          "mode": "list",
+          "cachedResultName": "AI Sales CRM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "YOUR_AIRTABLE_TABLE_ID",
+          "mode": "list",
+          "cachedResultName": "Lead"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Lead Score": "={{ $('AI Agent').item.json.output.lead_score }}",
+            "Name": "={{ $('Edit Fields').item.json['Full Name'] }}",
+            "Email": "={{ $('Edit Fields').item.json['Work Email'] }}",
+            "Company": "={{ $('Edit Fields').item.json['Company Name'] }}",
+            "Job Title": "={{ $('Edit Fields').item.json['Job Title'] }}",
+            "Industry": "={{ $('Edit Fields').item.json.Industry }}",
+            "Company Size": "={{ $('Edit Fields').item.json['Company Size'] }}",
+            "Business Problem": "={{ $('Edit Fields').item.json['What problem are you trying to solve?'] }}",
+            "Requested Solution": "={{ $('Edit Fields').item.json['What solution are you looking for?'] }}",
+            "Budget": "={{ $('Edit Fields').item.json['Estimated Budget'] }}",
+            "Timeline": "={{ $('Edit Fields').item.json['When are you looking to implement this?'] }}",
+            "Decision Maker": "={{ $('Edit Fields').item.json['Are you involved in the purchasing decision?'] }}",
+            "Qualification": "={{ $('AI Agent').item.json.output.qualification }}",
+            "Intent": "={{ $('AI Agent').item.json.output.intent }}",
+            "ICP Fit": "={{ $('AI Agent').item.json.output.icp_fit }}",
+            "AI Reason": "={{ $('AI Agent').item.json.output.reason }}",
+            "Recommended Action": "={{ $('AI Agent').item.json.output.recommended_action }}",
+            "Lead Status": "New",
+            "Created At": "={{ $now.setZone('Asia/Dhaka').toFormat('HH:mm:ss') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Job Title",
+              "displayName": "Job Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Industry",
+              "displayName": "Industry",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Company Size",
+              "displayName": "Company Size",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Business Problem",
+              "displayName": "Business Problem",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Requested Solution",
+              "displayName": "Requested Solution",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Budget",
+              "displayName": "Budget",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Timeline",
+              "displayName": "Timeline",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Decision Maker",
+              "displayName": "Decision Maker",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lead Score",
+              "displayName": "Lead Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Qualification",
+              "displayName": "Qualification",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Intent",
+              "displayName": "Intent",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ICP Fit",
+              "displayName": "ICP Fit",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "AI Reason",
+              "displayName": "AI Reason",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Recommended Action",
+              "displayName": "Recommended Action",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lead Status",
+              "displayName": "Lead Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        880,
+        -80
+      ],
+      "id": "38e227ce-5869-48f5-bf1f-06972b3b8735",
+      "name": "Create a record1"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "YOUR_AIRTABLE_BASE_ID",
+          "mode": "list",
+          "cachedResultName": "AI Sales CRM"
+        },
+        "table": {
+          "__rl": true,
+          "value": "YOUR_AIRTABLE_TABLE_ID",
+          "mode": "list",
+          "cachedResultName": "Lead"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Lead Score": "={{ $('AI Agent').item.json.output.lead_score }}",
+            "Name": "={{ $('Edit Fields').item.json['Full Name'] }}",
+            "Email": "={{ $('Edit Fields').item.json['Work Email'] }}",
+            "Company": "={{ $('Edit Fields').item.json['Company Name'] }}",
+            "Job Title": "={{ $('Edit Fields').item.json['Job Title'] }}",
+            "Industry": "={{ $('Edit Fields').item.json.Industry }}",
+            "Company Size": "={{ $('Edit Fields').item.json['Company Size'] }}",
+            "Business Problem": "={{ $('Edit Fields').item.json['What problem are you trying to solve?'] }}",
+            "Requested Solution": "={{ $('Edit Fields').item.json['What solution are you looking for?'] }}",
+            "Budget": "={{ $('Edit Fields').item.json['Estimated Budget'] }}",
+            "Timeline": "={{ $('Edit Fields').item.json['When are you looking to implement this?'] }}",
+            "Decision Maker": "={{ $('Edit Fields').item.json['Are you involved in the purchasing decision?'] }}",
+            "Qualification": "={{ $('AI Agent').item.json.output.qualification }}",
+            "Intent": "={{ $('AI Agent').item.json.output.intent }}",
+            "ICP Fit": "={{ $('AI Agent').item.json.output.icp_fit }}",
+            "AI Reason": "={{ $('AI Agent').item.json.output.reason }}",
+            "Recommended Action": "={{ $('AI Agent').item.json.output.recommended_action }}",
+            "Lead Status": "Nurturing",
+            "Created At": "={{ $now.setZone('Asia/Dhaka').toFormat('HH:mm:ss') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Job Title",
+              "displayName": "Job Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Industry",
+              "displayName": "Industry",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Company Size",
+              "displayName": "Company Size",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Business Problem",
+              "displayName": "Business Problem",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Requested Solution",
+              "displayName": "Requested Solution",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Budget",
+              "displayName": "Budget",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Timeline",
+              "displayName": "Timeline",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Decision Maker",
+              "displayName": "Decision Maker",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lead Score",
+              "displayName": "Lead Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Qualification",
+              "displayName": "Qualification",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Intent",
+              "displayName": "Intent",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "ICP Fit",
+              "displayName": "ICP Fit",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "AI Reason",
+              "displayName": "AI Reason",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Recommended Action",
+              "displayName": "Recommended Action",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Lead Status",
+              "displayName": "Lead Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        880,
+        112
+      ],
+      "id": "7c04495f-5e9a-498e-9222-e05c7a537c23",
+      "name": "Create a record2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Write a personalized follow-up email for this lead.\n\nLead Name:\n{{$('Edit Fields').item.json[\"Full Name\"]}}\n\nEmail:\n{{$('Edit Fields').item.json[\"Work Email\"]}}\n\nCompany:\n{{$('Edit Fields').item.json[\"Company Name\"]}}\n\nJob Title:\n{{$('Edit Fields').item.json[\"Job Title\"]}}\n\nIndustry:\n{{$('Edit Fields').item.json[\"Industry\"]}}\n\nCompany Size:\n{{$('Edit Fields').item.json[\"Company Size\"]}}\n\nBusiness Problem:\n{{$('Edit Fields').item.json[\"What problem are you trying to solve?\"]}}\n\nRequested Solution:\n{{$('Edit Fields').item.json[\"What solution are you looking for?\"]}}\n\nBudget:\n{{$('Edit Fields').item.json[\"Estimated Budget\"]}}\n\nImplementation Timeline:\n{{$('Edit Fields').item.json[\"When are you looking to implement this?\"]}}\n\nDecision Maker:\n{{$('Edit Fields').item.json[\"Are you involved in the purchasing decision?\"]}}\n\nAdditional Information:\n{{$('Edit Fields').item.json[\"Anything else we should know?\"]}}\n\nAI Recommendation:\n{{$('AI Agent').item.json.output.recommended_action}}\n\nAI Reason:\n{{$('AI Agent').item.json.output.reason}}\n\n",
+        "options": {
+          "systemMessage": "=You are an AI Sales Follow-Up Specialist.\n\nYour job is to write a personalized, professional follow-up email for a WARM sales lead.\n\nThe lead has already been evaluated by an AI qualification system and classified as WARM. Your goal is to continue the conversation and encourage the lead to take the next step, such as scheduling a discovery call.\n\nFollow these rules:\n\n1. Personalize the email using the lead's name, company, business problem, requested solution, and timeline.\n2. Clearly acknowledge the lead's specific business problem.\n3. Explain briefly how the requested solution could help address that problem.\n4. Use a professional, helpful, consultative tone.\n5. Do not sound aggressive, pushy, or overly sales-focused.\n6. Do not make unrealistic promises or guarantees.\n7. Do not invent information that was not provided by the lead.\n8. Keep the email concise. Aim for approximately 120–180 words.\n9. End with a clear but low-pressure call to action, such as asking whether they would be open to a short discovery call.\n10. Do not mention the lead score, AI qualification, ICP score, or internal sales analysis.\n11. Do not mention that the email was generated by AI.\n12. Never use placeholders such as [Your Name], [Name], [Company Name], [Your Company], or similar bracketed placeholders.\n13. Do not invent a sender's personal name.\n14. Do not include a subject line.\n15. Do not write \"Subject:\" anywhere in the output.\n16. End the email with exactly:\n\n\nBest regards,\nSales Team\n\n17. The closing must always use \"Sales Team\" and must never contain a placeholder or fabricated person's name.\n\nReturn only the email body. Do not include a subject line, \"Subject:\", metadata, or explanations.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1104,
+        -80
+      ],
+      "id": "7755a327-c307-47be-9d1b-6dd9c64ed392",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        1184,
+        144
+      ],
+      "id": "dd0ceb2d-4724-4600-8240-0a8286b06af0",
+      "name": "Google Gemini Chat Model1"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Create a record1').item.json.fields.Email }}",
+        "subject": "Following up on your automation requirements",
+        "emailType": "text",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1456,
+        -80
+      ],
+      "id": "dde0959a-e98c-4da0-b876-1e33554c22af",
+      "name": "Send a message1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create a record1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create a record2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a record": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a record1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "nodeGroups": [],
+  "tags": []
+}
